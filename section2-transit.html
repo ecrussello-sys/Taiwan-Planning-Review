@@ -317,13 +317,14 @@
   }
 
   /* CONTRAST TABLE */
-  .contrast-block {
-    display: block;          /* Ensures it takes up its own space */
-    clear: both;             /* Tells the page: "Finish everything above before starting this" */
+ contrast-block {
+    display: block;          /* Acts like a solid brick */
+    clear: both;             /* Forces it below the stats */
+    position: relative;
     border-top: 1px solid var(--mist);
     padding-top: 24px;
-    margin-bottom: 60px;     /* Increased this to give a bigger gap at the bottom */
-    position: relative;      /* Keeps it grounded */
+    margin-bottom: 80px;     /* Added more space here */
+    width: 100%;             /* Ensures it takes up full width */
   }
   .contrast-title {
     font-family: 'DM Mono', monospace;
@@ -371,28 +372,16 @@
   .contrast-header .ch-taiwan { color: var(--steel); }
 
   /* REFERENCES */
-  .references {
-   clear: both;             /* Tells this box: "Wait until the table above is done" */
-    display: block;          /* Tells this box: "You are a solid brick, not a ghost" */
-    position: relative;      /* Tells this box: "Stay in line with the rest of the page" */
-    background: var(--paper);/* Ensures the background isn't see-through */
-    max-width: 1120px;
-    margin: 0 auto 80px;
+.references {
+    display: block;
+    clear: both;             /* IMPORTANT: Forces it to stay below the table */
+    position: relative;
+    background: var(--paper); /* Matches your page color */
+    width: 100%;             /* Makes it span the whole page */
+    max-width: 1120px;       /* Keeps the text from getting too wide */
+    margin: 40px auto 80px;  /* Centers it and adds top/bottom space */
     padding: 32px 48px;
     border-top: 3px solid var(--ink);
-  }
-  .references h3 {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: #8a9aaa;
-    margin-bottom: 20px;
-  }
-  .references li {
-    font-size: 12px;
-    line-height: 1.6;
-    color: #5a6a7a;
   }
 
   footer {
