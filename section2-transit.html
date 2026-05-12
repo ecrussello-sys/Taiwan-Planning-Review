@@ -318,9 +318,12 @@
 
   /* CONTRAST TABLE */
   .contrast-block {
+    display: block;          /* Ensures it takes up its own space */
+    clear: both;             /* Tells the page: "Finish everything above before starting this" */
     border-top: 1px solid var(--mist);
     padding-top: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;     /* Increased this to give a bigger gap at the bottom */
+    position: relative;      /* Keeps it grounded */
   }
   .contrast-title {
     font-family: 'DM Mono', monospace;
@@ -488,8 +491,6 @@
     </div>
 
     <div class="contrast-block">
-     overflow: auto;
-  display: block;
       <div class="contrast-title">Toronto vs. Taiwan</div>
       <div class="contrast-header">
         <span class="ch-toronto">Toronto / GO</span>
