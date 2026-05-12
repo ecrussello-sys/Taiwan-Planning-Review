@@ -639,9 +639,9 @@
     margin: 0 auto;
     padding: 72px 48px;
     display: grid;
-    grid-template-columns: 1fr 320px; /* Text on left, 320px Sidebar on right */
+    grid-template-columns: 1fr 320px; 
     gap: 72px;
-    align-items: start; /* THIS IS KEY: It lets the sidebar float instead of stretching */
+    align-items: start; /* This stops the sidebar from being too tall */
   }
 
   /* PROSE */
@@ -756,11 +756,9 @@
 
 /* SIDEBAR */
   .sidebar { 
-    position: sticky; 
+    position: sticky;
     top: 32px;
-    align-self: start; /* This is the "secret sauce" that allows it to float */
-    width: 340px;      /* Gives it a set size */
-    flex-shrink: 0;    /* Prevents the text from pushing it off the screen */
+    z-index: 10;
   }
 
   .pull-quote {
@@ -872,10 +870,12 @@
 
   /* REFERENCES */
   .references {
-    max-width: 1120px;
-    margin: 0 auto 80px;
+max-width: 1120px;
+    margin: 80px auto;
     padding: 32px 48px;
-    border-top: 3px solid var(--ink);
+    border-top: 3px solid #111820;
+    display: block; 
+    clear: both; /* This makes sure it stays below the grid */
   }
   .references h3 {
     font-family: 'DM Mono', monospace;
@@ -1010,22 +1010,17 @@
         <div class="contrast-cell toronto">Wall-to-wall bikes blocking evacuation</div>
         <div class="contrast-cell taiwan">Structured parking within dedicated car</div>
       </div>
-      <div class="contrast-row">
+  <div class="contrast-row">
         <div class="contrast-cell toronto">Policy lagging behind reality</div>
         <div class="contrast-cell taiwan">Infrastructure built around actual use</div>
       </div>
-    </div>
-
-  </aside>
-</div>
-
-<section class="references">
+    </div> </aside> </div> <section class="references">
   <h3>References</h3>
   <ol>
-    <li>BlogTO. (2024, February 13). Food delivery bikes have turned GO trains into claustrophobic nightmare rides. <em>BlogTO.</em> https://www.blogto.com/city/2024/02/food-delivery-bikes-go-trains/</li>
-    <li>CBC News. (2024, January 6). Metrolinx says no change to e-bike policy on GO Transit after fire on Toronto subway train. <em>CBC News.</em> https://www.cbc.ca/news/canada/toronto/e-bike-go-train-ttc-fire-policy-1.7076133</li>
-    <li>CTV News. (2024, February 16). 'A huge, huge issue': Growing number of e-bikes on GO trains sparking safety concerns. <em>CTV News.</em> https://www.ctvnews.ca/toronto/article/a-huge-huge-issue-growing-number-of-e-bikes-on-go-trains-sparking-safety-concerns/</li>
-    <li>TTCriders. (2024, November 22). Regulate delivery companies and e-bike sales, not gig workers. <em>TTCriders.</em> https://www.ttcriders.ca/ebikes</li>
+    <li>BlogTO. (2024, February 13). Food delivery bikes have turned GO trains into claustrophobic nightmare rides. BlogTO. https://www.blogto.com/city/2024/02/food-delivery-bikes-go-trains/</li>
+    <li>CBC News. (2024, January 6). Metrolinx says no change to e-bike policy on GO Transit after fire on Toronto subway train. CBC News. https://www.cbc.ca/news/canada/toronto/e-bike-go-train-ttc-fire-policy-1.7076133</li>
+    <li>CTV News. (2024, February 16). 'A huge, huge issue': Growing number of e-bikes on GO trains sparking safety concerns. CTV News. https://www.ctvnews.ca/toronto/article/a-huge-huge-issue-growing-number-of-e-bikes-on-go-trains-sparking-safety-concerns/</li>
+    <li>TTCriders. (2024, November 22). Regulate delivery companies and e-bike sales, not gig workers. TTCriders. https://www.ttcriders.ca/ebikes</li>
   </ol>
 </section>
 
