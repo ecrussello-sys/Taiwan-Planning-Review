@@ -406,37 +406,6 @@
       frame.onload = () => {
         overlay.classList.remove('fading');
         isTransitioning = false;
-      };
-      
-      setTimeout(() => {
-        overlay.classList.remove('fading');
-        isTransitioning = false;
-      }, 600);
-    }, 250);
-  }
-
-  function prevPage() { 
-    if (current > 0 && !isTransitioning) goToPage(current - 1); 
-  }
-
-  function nextPage() { 
-    if (current < pages.length - 1 && !isTransitioning) goToPage(current + 1); 
-  }
-
-  function updateNav() {
-    document.querySelectorAll('.page-btn').forEach((btn, i) => {
-      btn.classList.toggle('active', i === current);
-    });
-    document.getElementById('prevBtn').disabled = current === 0;
-    document.getElementById('nextBtn').disabled = current === pages.length - 1;
-    document.getElementById('currentNum').textContent = current + 1;
-  }
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight') nextPage();
-    if (e.key === 'ArrowLeft') prevPage();
-  });
-</script>
 
 </body>
 </html>
