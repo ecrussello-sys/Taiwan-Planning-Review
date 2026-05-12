@@ -517,14 +517,9 @@
         <div class="contrast-cell toronto">Policy lagging behind reality</div>
         <div class="contrast-cell taiwan">Infrastructure built around actual use</div>
       </div>
-    </div>
-
-  </aside>
-</div>
-
-<section class="references">
+  </div> </aside> </div> <section class="references"> 
   <h3>References</h3>
-  <ol>
+<ol>
     <li>BlogTO. (2024, February 13). Food delivery bikes have turned GO trains into claustrophobic nightmare rides. <em>BlogTO.</em> https://www.blogto.com/city/2024/02/food-delivery-bikes-go-trains/</li>
     <li>CBC News. (2024, January 6). Metrolinx says no change to e-bike policy on GO Transit after fire on Toronto subway train. <em>CBC News.</em> https://www.cbc.ca/news/canada/toronto/e-bike-go-train-ttc-fire-policy-1.7076133</li>
     <li>CTV News. (2024, February 16). 'A huge, huge issue': Growing number of e-bikes on GO trains sparking safety concerns. <em>CTV News.</em> https://www.ctvnews.ca/toronto/article/a-huge-huge-issue-growing-number-of-e-bikes-on-go-trains-sparking-safety-concerns/</li>
@@ -638,14 +633,15 @@
   }
 
   /* BODY LAYOUT */
+/* BODY LAYOUT */
   .article-body {
     max-width: 1120px;
     margin: 0 auto;
     padding: 72px 48px;
     display: grid;
-    grid-template-columns: 1fr 320px;
+    grid-template-columns: 1fr 320px; /* Text on left, 320px Sidebar on right */
     gap: 72px;
-    align-items: start;
+    align-items: start; /* THIS IS KEY: It lets the sidebar float instead of stretching */
   }
 
   /* PROSE */
@@ -758,11 +754,13 @@
     letter-spacing: 0.08em;
   }
 
-  /* SIDEBAR */
+/* SIDEBAR */
   .sidebar { 
     position: sticky; 
     top: 32px;
-    align-self: start;
+    align-self: start; /* This is the "secret sauce" that allows it to float */
+    width: 340px;      /* Gives it a set size */
+    flex-shrink: 0;    /* Prevents the text from pushing it off the screen */
   }
 
   .pull-quote {
