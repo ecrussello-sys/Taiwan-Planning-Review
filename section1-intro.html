@@ -404,7 +404,7 @@
 
 <script>
   const pages = [
-    "section1-intro-2.html",
+    "section1-intro.html", // Double-check if you need the "-2" or not!
     "section2-transit.html",
     "section3-housing.html",
     "section4-beitou.html",
@@ -413,6 +413,11 @@
     "section-youbike-5.html",
     "kaohsiung-essay.html",
   ];
+
+  let current = 0;
+  let isTransitioning = false;
+
+  function goToPage(index) {
     if (index === current || isTransitioning) return;
 
     isTransitioning = true;
@@ -424,11 +429,17 @@
     setTimeout(() => {
       current = index;
       frame.src = pages[current];
-      updateNav();
+      
+      // If you have a function called updateNav(), keep this. 
+      // If not, you can delete this line.
+      if (typeof updateNav === "function") updateNav();
       
       frame.onload = () => {
         overlay.classList.remove('fading');
         isTransitioning = false;
-
+      };
+    }, 500); // 500ms matches the fade animation timing
+  }
+</script>
 </body>
 </html>
