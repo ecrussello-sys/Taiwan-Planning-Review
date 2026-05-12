@@ -19,17 +19,30 @@
     --muted: #6B6560;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
- body { 
+ body {
   font-family: 'DM Sans', sans-serif; 
   background: var(--light-sand); 
   color: var(--ink); 
   font-size: 17px; 
   line-height: 1.75; 
-  overflow-y: auto; 
-  height: auto;    
+  overflow-y: auto !important; 
+  height: auto !important;    
 }
-  .masthead { background: var(--charcoal); color: var(--sand); text-align: center; padding: 18px 40px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 3px solid var(--amber); }
-  hero { 
+
+.masthead { 
+  background: var(--charcoal); 
+  color: var(--sand); 
+  text-align: center; 
+  padding: 18px 40px; 
+  font-family: 'DM Sans', sans-serif; 
+  font-size: 11px; 
+  font-weight: 500; 
+  letter-spacing: 0.18em; 
+  text-transform: uppercase; 
+  border-bottom: 3px solid var(--amber); 
+}
+
+.hero { 
   position: relative; 
   min-height: 92vh; 
   overflow: visible; 
