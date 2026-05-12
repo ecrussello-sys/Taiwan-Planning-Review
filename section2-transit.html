@@ -191,7 +191,7 @@
     display: block;
   }
   .comparison figure figcaption {
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
@@ -369,6 +369,10 @@
 
   /* REFERENCES */
   .references {
+   clear: both;             /* Tells this box: "Wait until the table above is done" */
+    display: block;          /* Tells this box: "You are a solid brick, not a ghost" */
+    position: relative;      /* Tells this box: "Stay in line with the rest of the page" */
+    background: var(--paper);/* Ensures the background isn't see-through */
     max-width: 1120px;
     margin: 0 auto 80px;
     padding: 32px 48px;
@@ -381,12 +385,6 @@
     text-transform: uppercase;
     color: #8a9aaa;
     margin-bottom: 20px;
-  }
-  .references ol {
-    padding-left: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 48px;
   }
   .references li {
     font-size: 12px;
@@ -490,6 +488,8 @@
     </div>
 
     <div class="contrast-block">
+     overflow: auto;
+  display: block;
       <div class="contrast-title">Toronto vs. Taiwan</div>
       <div class="contrast-header">
         <span class="ch-toronto">Toronto / GO</span>
