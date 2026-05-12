@@ -318,13 +318,14 @@
 
   /* CONTRAST TABLE */
  contrast-block {
-    display: block;          /* Acts like a solid brick */
-    clear: both;             /* Forces it below the stats */
-    position: relative;
+    display: block !important;
+    clear: both !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important; /* Forces the box to be as tall as the content */
+    margin-bottom: 100px !important;
     border-top: 1px solid var(--mist);
     padding-top: 24px;
-    margin-bottom: 80px;     /* Added more space here */
-    width: 100%;             /* Ensures it takes up full width */
   }
   .contrast-title {
     font-family: 'DM Mono', monospace;
@@ -373,16 +374,16 @@
 
   /* REFERENCES */
 .references {
-    display: block;
-    clear: both;             /* IMPORTANT: Forces it to stay below the table */
-    position: relative;
-    background: var(--paper); /* Matches your page color */
-    width: 100%;             /* Makes it span the whole page */
-    max-width: 1120px;       /* Keeps the text from getting too wide */
-    margin: 40px auto 80px;  /* Centers it and adds top/bottom space */
+display: block !important;
+    clear: both !important;
+    position: relative !important;
+    background-color: var(--paper) !important;
+    width: 100% !important;
+    max-width: 1120px;
+    margin: 50px auto !important;
     padding: 32px 48px;
     border-top: 3px solid var(--ink);
-  }
+    z-index: 999 !important; /* Puts it on the very top layer */
 
   footer {
     background: var(--ink);
